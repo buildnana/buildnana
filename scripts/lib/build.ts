@@ -35,6 +35,7 @@ export const config: esbuild.BuildOptions = {
     minifyIdentifiers: true,
     minifySyntax: true,
     minifyWhitespace: true,
+    target: ["es2020"],
     loader: {
         ".png": "dataurl",
         ".glsl": "text",
