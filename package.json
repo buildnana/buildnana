@@ -1,0 +1,104 @@
+{
+  "name": "buildnana",
+  "description": "BUILDNANA is a JavaScript & TypeScript game library that helps you make games fast and fun!",
+  "version": "4000.0.0-alpha.27.1",
+  "license": "MIT",
+  "homepage": "https://v4000.buildnana.com/",
+  "bugs": {
+    "url": "https://github.com/buildnana/buildnana/issues"
+  },
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/buildnana"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/buildnana/buildnana.git"
+  },
+  "type": "module",
+  "main": "./dist/buildnana.cjs",
+  "module": "./dist/buildnana.mjs",
+  "types": "./dist/doc.d.ts",
+  "readme": "./README.md",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/doc.d.ts",
+        "default": "./dist/buildnana.mjs"
+      },
+      "require": {
+        "types": "./dist/doc.d.ts",
+        "default": "./dist/buildnana.cjs"
+      }
+    },
+    "./global": "./dist/declaration/global.js"
+  },
+  "typesVersions": {
+    "*": {
+      "global": [
+        "./dist/declaration/global.d.ts"
+      ]
+    }
+  },
+  "keywords": [
+    "game development",
+    "javascript",
+    "typescript",
+    "game engine",
+    "2d games",
+    "physics engine",
+    "webgl",
+    "canvas",
+    "game library",
+    "buildnana",
+    "kaboom",
+    "kaboomjs"
+  ],
+  "files": [
+    "dist/",
+    "buildnana.webp",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "start": "node scripts/start.ts",
+    "dev": "node scripts/start.ts",
+    "build": "pnpm generate:index && pnpm generate:dts && node scripts/build.ts",
+    "check": "tsc",
+    "lint": "eslint .",
+    "fmt": "dprint fmt",
+    "fmt:commit": "dprint fmt && git diff --quiet --cached && echo \"No changes\" || (git add . && git commit -m \"style: fmt\")",
+    "generate:index": "node scripts/generateIndex.js",
+    "generate:dts": "dts-bundle-generator -o dist/doc.d.ts src/index.ts",
+    "test": "node scripts/test.ts",
+    "test:vite": "vitest --typecheck",
+    "prepare": "npm run build"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.4",
+    "@nanabuild/crew": "npm:@kaplayjs/crew@2.0.0-beta.6",
+    "@nanabuild/dprint-config": "npm:@kaplayjs/dprint-config@^1.2.0",
+    "@types/express": "^5.0.6",
+    "@types/jest": "^29.5.14",
+    "@typescript-eslint/eslint-plugin": "^8.59.3",
+    "@typescript-eslint/parser": "^8.59.3",
+    "dprint": "^0.50.2",
+    "dts-bundle-generator": "^9.5.1",
+    "ejs": "^3.1.10",
+    "esbuild": "^0.28.1",
+    "eslint": "^9.39.4",
+    "eslint-plugin-jsdoc": "^50.8.0",
+    "express": "^5.2.1",
+    "puppeteer": "^22.15.0",
+    "tar-fs": "^3.1.2",
+    "typescript": "5.6.3",
+    "typescript-eslint": "^8.59.3",
+    "vite": "7.3.2",
+    "vitest": "^4.1.6",
+    "vitest-environment-puppeteer": "^11.0.3",
+    "vitest-puppeteer": "^11.0.3"
+  },
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "packageManager": "pnpm@11.1.1+sha512.d1fdf5f73c617b64fa1a56a81c3c8dfe0e966e33a6010aa256b517ae77be21d93e05affc0de1a83b0e4f29d569f68b446ae8f068cd7247c0bb3df0fb4d7bdf9a"
+}

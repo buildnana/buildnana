@@ -1,0 +1,7 @@
+contact_links:
+  - name: Help
+    url: https://github.com/buildnana/buildnana/discussions/new?category=q-a
+    about: How to use certain buildnana feature, or how to achieve something with buildnana
+  - name: Compiling/Contributing
+    url: https://github.com/buildnana/buildnana/discussions/new?category=q-a
+    about: How to compile buildnana/how to contribute to it
